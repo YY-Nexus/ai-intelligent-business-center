@@ -1,0 +1,159 @@
+# 文档站点配置
+sourcePath: ./docs
+outputPath: ./public/docs
+siteTitle: API绑定系统文档
+siteDescription: API绑定系统的完整文档，包括架构、使用指南和API参考。
+
+# 文档分类
+categories:
+  - id: getting-started
+    title: 入门指南
+    description: 快速开始使用API绑定系统
+    order: 1
+  
+  - id: architecture
+    title: 架构设计
+    description: API绑定系统的架构设计和原理
+    order: 2
+  
+  - id: guides
+    title: 使用指南
+    description: 详细的使用指南和最佳实践
+    order: 3
+  
+  - id: api-reference
+    title: API参考
+    description: API绑定系统的API参考文档
+    order: 4
+  
+  - id: examples
+    title: 示例
+    description: 各种使用场景的示例代码
+    order: 5
+
+# 侧边栏配置
+sidebar:
+  - category: getting-started
+    items:
+      - id: getting-started/introduction
+        title: 介绍
+        path: /docs/getting-started/introduction
+        order: 1
+      
+      - id: getting-started/installation
+        title: 安装
+        path: /docs/getting-started/installation
+        order: 2
+      
+      - id: getting-started/quick-start
+        title: 快速开始
+        path: /docs/getting-started/quick-start
+        order: 3
+  
+  - category: architecture
+    items:
+      - id: architecture/overview
+        title: 概述
+        path: /docs/architecture/overview
+        order: 1
+      
+      - id: architecture/components
+        title: 组件
+        path: /docs/architecture/components
+        order: 2
+      
+      - id: architecture/dependency-injection
+        title: 依赖注入
+        path: /docs/architecture/dependency-injection
+        order: 3
+  
+  - category: guides
+    items:
+      - id: guides/basic-usage
+        title: 基本用法
+        path: /docs/guides/basic-usage
+        order: 1
+      
+      - id: guides/authentication
+        title: 认证
+        path: /docs/guides/authentication
+        order: 2
+      
+      - id: guides/data-mapping
+        title: 数据映射
+        path: /docs/guides/data-mapping
+        order: 3
+      
+      - id: guides/error-handling
+        title: 错误处理
+        path: /docs/guides/error-handling
+        order: 4
+      
+      - id: guides/testing
+        title: 测试
+        path: /docs/guides/testing
+        order: 5
+  
+  - category: api-reference
+    items:
+      - id: api-reference/api-client
+        title: API客户端
+        path: /docs/api-reference/api-client
+        order: 1
+      
+      - id: api-reference/config-manager
+        title: 配置管理器
+        path: /docs/api-reference/config-manager
+        order: 2
+      
+      - id: api-reference/auth-handler
+        title: 认证处理器
+        path: /docs/api-reference/auth-handler
+        order: 3
+      
+      - id: api-reference/request-builder
+        title: 请求构建器
+        path: /docs/api-reference/request-builder
+        order: 4
+      
+      - id: api-reference/response-parser
+        title: 响应解析器
+        path: /docs/api-reference/response-parser
+        order: 5
+      
+      - id: api-reference/data-mapper
+        title: 数据映射器
+        path: /docs/api-reference/data-mapper
+        order: 6
+      
+      - id: api-reference/error-handler
+        title: 错误处理器
+        path: /docs/api-reference/error-handler
+        order: 7
+  
+  - category: examples
+    items:
+      - id: examples/basic
+        title: 基本示例
+        path: /docs/examples/basic
+        order: 1
+      
+      - id: examples/authentication
+        title: 认证示例
+        path: /docs/examples/authentication
+        order: 2
+      
+      - id: examples/data-mapping
+        title: 数据映射示例
+        path: /docs/examples/data-mapping
+        order: 3
+      
+      - id: examples/error-handling
+        title: 错误处理示例
+        path: /docs/examples/error-handling
+        order: 4
+      
+      - id: examples/advanced
+        title: 高级示例
+        path: /docs/examples/advanced
+        order: 5

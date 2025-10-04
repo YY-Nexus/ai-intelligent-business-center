@@ -1,0 +1,390 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 50% 98%;
+    --foreground: 210 40% 20%;
+
+    --card: 210 40% 96%;
+    --card-foreground: 210 40% 20%;
+
+    --popover: 210 40% 98%;
+    --popover-foreground: 210 40% 20%;
+
+    --primary: 210 90% 50%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 90%;
+    --secondary-foreground: 210 40% 20%;
+
+    --muted: 210 40% 90%;
+    --muted-foreground: 210 40% 40%;
+
+    --accent: 210 40% 90%;
+    --accent-foreground: 210 40% 20%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 210 40% 86%;
+    --input: 210 40% 86%;
+    --ring: 210 90% 50%;
+
+    --radius: 0.5rem;
+
+    /* 言语云品牌色彩 */
+    --yanyu-primary: 210 100% 56%;
+    --yanyu-secondary: 195 100% 50%;
+    --yanyu-accent: 220 100% 60%;
+    --yanyu-gradient: linear-gradient(135deg, hsl(var(--yanyu-primary)) 0%, hsl(var(--yanyu-secondary)) 100%);
+
+    /* 智能动画变量 */
+    --animation-duration: 300ms;
+    --animation-easing: cubic-bezier(0.4, 0, 0.2, 1);
+    --hover-scale: 1.02;
+    --active-scale: 0.98;
+  }
+
+  .dark {
+    --background: 210 50% 10%;
+    --foreground: 210 20% 98%;
+
+    --card: 210 40% 12%;
+    --card-foreground: 210 20% 98%;
+
+    --popover: 210 40% 12%;
+    --popover-foreground: 210 20% 98%;
+
+    --primary: 210 90% 50%;
+    --primary-foreground: 210 20% 98%;
+
+    --secondary: 210 40% 20%;
+    --secondary-foreground: 210 20% 98%;
+
+    --muted: 210 40% 20%;
+    --muted-foreground: 210 20% 60%;
+
+    --accent: 210 40% 20%;
+    --accent-foreground: 210 20% 98%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 210 40% 26%;
+    --input: 210 40% 26%;
+    --ring: 210 90% 50%;
+
+    /* 暗色模式下的言语云色彩 */
+    --yanyu-primary: 210 100% 65%;
+    --yanyu-secondary: 195 100% 60%;
+    --yanyu-accent: 220 100% 70%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+/* 言语云品牌样式 */
+.yanyu-gradient {
+  background: var(--yanyu-gradient);
+}
+
+.yanyu-text-gradient {
+  background: var(--yanyu-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* 智能交互效果 */
+.smart-interactive {
+  position: relative;
+  transition: all var(--animation-duration) var(--animation-easing);
+  transform-origin: center;
+}
+
+.smart-interactive:hover {
+  transform: scale(var(--hover-scale));
+}
+
+.smart-interactive:active {
+  transform: scale(var(--active-scale));
+}
+
+.smart-interactive::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: var(--yanyu-gradient);
+  opacity: 0;
+  transition: opacity var(--animation-duration) var(--animation-easing);
+  z-index: -1;
+}
+
+.smart-interactive:hover::before {
+  opacity: 0.1;
+}
+
+/* AI增强效果 */
+.ai-enhanced {
+  position: relative;
+  overflow: hidden;
+}
+
+.ai-enhanced::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(from 0deg, transparent, hsl(var(--yanyu-primary) / 0.1), transparent);
+  animation: ai-rotate 8s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes ai-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* 智能光效 */
+.smart-glow {
+  position: relative;
+  box-shadow: 0 0 20px hsl(var(--yanyu-primary) / 0.2), 0 0 40px hsl(var(--yanyu-primary) / 0.1), 0 0 60px
+    hsl(var(--yanyu-primary) / 0.05);
+  transition: box-shadow var(--animation-duration) var(--animation-easing);
+}
+
+.smart-glow:hover {
+  box-shadow: 0 0 30px hsl(var(--yanyu-primary) / 0.3), 0 0 60px hsl(var(--yanyu-primary) / 0.2), 0 0 90px
+    hsl(var(--yanyu-primary) / 0.1);
+}
+
+/* 脉冲动画 */
+.pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 20px hsl(var(--yanyu-primary) / 0.2);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 40px hsl(var(--yanyu-primary) / 0.4);
+    transform: scale(1.01);
+  }
+}
+
+/* 渐变边框 */
+.gradient-border {
+  position: relative;
+  background: var(--background);
+  border-radius: var(--radius);
+}
+
+.gradient-border::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  background: var(--yanyu-gradient);
+  border-radius: inherit;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: xor;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+}
+
+/* 流光效果 */
+.flowing-light {
+  position: relative;
+  overflow: hidden;
+}
+
+.flowing-light::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, hsl(var(--yanyu-primary) / 0.3), transparent);
+  transition: left 0.8s ease-in-out;
+}
+
+.flowing-light:hover::before {
+  left: 100%;
+}
+
+/* 3D卡片效果 */
+.card-3d {
+  transform-style: preserve-3d;
+  transition: transform var(--animation-duration) var(--animation-easing);
+}
+
+.card-3d:hover {
+  transform: rotateX(5deg) rotateY(5deg) translateZ(10px);
+}
+
+/* 智能按钮增强 */
+.smart-button {
+  position: relative;
+  background: var(--yanyu-gradient);
+  border: none;
+  color: white;
+  font-weight: 600;
+  overflow: hidden;
+  transition: all var(--animation-duration) var(--animation-easing);
+}
+
+.smart-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease-in-out;
+}
+
+.smart-button:hover::before {
+  left: 100%;
+}
+
+.smart-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px hsl(var(--yanyu-primary) / 0.3);
+}
+
+.smart-button:active {
+  transform: translateY(0);
+}
+
+/* 导航增强效果 */
+.nav-enhanced {
+  position: relative;
+  transition: all var(--animation-duration) var(--animation-easing);
+}
+
+.nav-enhanced::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: var(--yanyu-gradient);
+  transition: all var(--animation-duration) var(--animation-easing);
+  transform: translateX(-50%);
+}
+
+.nav-enhanced:hover::after,
+.nav-enhanced.active::after {
+  width: 100%;
+}
+
+/* 智能加载动画 */
+.smart-loading {
+  position: relative;
+  overflow: hidden;
+}
+
+.smart-loading::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent 0%, hsl(var(--yanyu-primary) / 0.1) 50%, transparent 100%);
+  animation: loading-shimmer 1.5s infinite;
+}
+
+@keyframes loading-shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* 响应式增强 */
+@media (max-width: 768px) {
+  :root {
+    --animation-duration: 200ms;
+    --hover-scale: 1.01;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* 高对比度模式 */
+@media (prefers-contrast: high) {
+  .smart-glow,
+  .pulse-glow {
+    box-shadow: none;
+    border: 2px solid hsl(var(--yanyu-primary));
+  }
+}
+
+/* 深色模式特定样式 */
+.dark .smart-glow {
+  box-shadow: 0 0 20px hsl(var(--yanyu-primary) / 0.3), 0 0 40px hsl(var(--yanyu-primary) / 0.2), 0 0 60px
+    hsl(var(--yanyu-primary) / 0.1);
+}
+
+.dark .smart-glow:hover {
+  box-shadow: 0 0 30px hsl(var(--yanyu-primary) / 0.4), 0 0 60px hsl(var(--yanyu-primary) / 0.3), 0 0 90px
+    hsl(var(--yanyu-primary) / 0.2);
+}
+
+/* 可访问性增强 */
+.focus-visible {
+  outline: 2px solid hsl(var(--yanyu-primary));
+  outline-offset: 2px;
+}
+
+/* 性能优化 */
+.gpu-accelerated {
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+/* 微交互效果 */
+.micro-interaction {
+  transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.micro-interaction:hover {
+  transform: translateY(-1px);
+}
+
+.micro-interaction:active {
+  transform: translateY(0);
+  transition-duration: 75ms;
+}
