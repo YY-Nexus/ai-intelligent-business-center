@@ -69,7 +69,7 @@
     "lucide-react": "^0.454.0",
     "marked": "latest",
     "nanoid": "latest",
-    "next": "^15.5.7",
+    "next": "^15.5.9",
     "next-themes": "latest",
     "node-fetch": "latest",
     "react": "^19",
