@@ -234,8 +234,9 @@ export function EnhancedHeader() {
                   </NavigationMenuItem>
                 ) : (
                   <NavigationMenuItem key={item.href}>
-                    <Link href={item.href} legacyBehavior passHref>
-                      <NavigationMenuLink
+                    <NavigationMenuLink asChild>
+                      <Link
+                        href={item.href}
                         className={cn(
                           navigationMenuTriggerStyle(),
                           "h-10 px-4 py-2 bg-transparent hover:bg-gradient-to-r hover:from-blue-50 hover:to-cyan-50 dark:hover:from-blue-950/50 dark:hover:to-cyan-950/50 transition-all duration-200",
@@ -247,8 +248,8 @@ export function EnhancedHeader() {
                           {item.icon}
                           {item.title}
                         </div>
-                      </NavigationMenuLink>
-                    </Link>
+                      </Link>
+                    </NavigationMenuLink>
                   </NavigationMenuItem>
                 ),
               )}
